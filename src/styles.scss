@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+// styles.scss or a shared .scss
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes fadeIn {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+// A spinner overlay style (optional)
+.overlay-spinner {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255,255,255,0.7);
+  z-index: 9999;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

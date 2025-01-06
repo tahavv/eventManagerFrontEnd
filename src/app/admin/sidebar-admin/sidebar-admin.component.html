@@ -1,0 +1,37 @@
+<div [ngClass]="{'w-64': isOpen, 'w-0': !isOpen}"
+     class="fixed left-0 top-0 h-full bg-white border-r border-gray-200 pt-16
+                transition-all duration-300 ease-in-out overflow-hidden">
+  <div class="p-4">
+    <ng-container *ngFor="let item of menuItems">
+      <div class="mb-2">
+        <ng-container *ngIf="item.submenu; else singleItem">
+          <button (click)="toggleDropdown(item.title)"
+                  class="w-full flex items-center justify-between p-2 rounded hover:bg-gray-100">
+            <div class="flex items-center gap-2">
+              <i class="fas fa-{{ item.icon }}"></i>
+              <span>{{ item.title }}</span>
+            </div>
+            <i class="fas fa-chevron-down"
+               [ngClass]="{'rotate-180': activeDropdown === item.title}">
+            </i>
+          </button>
+          <div *ngIf="activeDropdown === item.title"
+               class="ml-8 mt-1 space-y-1">
+            <button *ngFor="let subItem of item.submenu"
+                    [routerLink]="[subItem.path]"
+                    class="w-full text-left p-2 rounded hover:bg-gray-100">
+              {{ subItem.title }}
+            </button>
+          </div>
+        </ng-container>
+        <ng-template #singleItem>
+          <button [routerLink]="[item.path]"
+                  class="w-full flex items-center gap-2 p-2 rounded hover:bg-gray-100">
+            <i class="fas fa-{{ item.icon }}"></i>
+            <span>{{ item.title }}</span>
+          </button>
+        </ng-template>
+      </div>
+    </ng-container>
+  </div>
+</div>
