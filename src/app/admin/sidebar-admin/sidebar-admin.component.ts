@@ -17,6 +17,7 @@ export class SidebarAdminComponent {
       icon: 'calendar',
       submenu: [
         { title: 'All Events', path: '/admin/events' },
+        { title: 'Calendar', path: '/admin/events/calendar' },
         { title: 'Create Event', path: '/admin/events/create' },
         { title: 'Categories', path: '/admin/events/categories' }
       ]

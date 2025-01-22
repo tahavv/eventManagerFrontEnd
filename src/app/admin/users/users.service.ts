@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import {environment} from "../../../environments/environment";
 
 export interface User {
-  organizedEvents: [];
+  organizedEvents:any;
   id: number;
   name: string;
   email: string;

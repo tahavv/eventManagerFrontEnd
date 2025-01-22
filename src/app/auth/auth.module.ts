@@ -14,6 +14,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
+import {AuthRoutingModule} from "./auth-routing.module";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {RouterLink} from "@angular/router";
     MatProgressSpinnerModule,
     MatInputModule,
     MatButtonModule,
-    RouterLink
+    RouterLink,
+    AuthRoutingModule
   ]
 })
 export class AuthModule { }
